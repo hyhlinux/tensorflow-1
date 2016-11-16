@@ -76,7 +76,7 @@ dir_name="test_num"
 files = os.listdir(dir_name)
 cnt=len(files)
 for i in range(cnt):
-  files[i]=dir_name+"/"+files[i]
+  files[i]=dir_name+"/"+files[i]                            #os.join
   test_images1,test_labels1=GetImage([files[i]])
   mnist.test = input_data.DataSet(test_images1, test_labels1)
   res=sess.run(accuracy,feed_dict={x: mnist.test.images, y_: mnist.test.labels,keep_prob:1.0})
